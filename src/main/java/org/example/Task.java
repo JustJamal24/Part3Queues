@@ -1,6 +1,7 @@
 package org.example;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Task {
 
@@ -106,6 +107,14 @@ public class Task {
         //If all the fields are equal then return true
         return true;
     }
+
+    //Returns a hash code value for the object based on its fields.
+    @Override
+    public int hashCode() {
+        return Objects.hash(owner, description, deadline);
+    }
+
+
 
 
 
