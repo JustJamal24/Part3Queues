@@ -59,6 +59,59 @@ public class Task {
         }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        //Checks if the object is an instance of the class
+        if (this == o) return true;
+        //Checks for null or if they are not the same class
+        if (o == null || getClass()!= o.getClass()) return false;
+
+
+        Task task = (Task) o;
+
+        //Comparing the fields
+
+        //Not null check
+        if(owner != null){
+            //Fields are equal check
+            if(!owner.equals(task.owner)){
+                return false;
+            }
+        //If not null check is false then check if the owner field of the task object is not null
+        } else if(task.owner!= null){
+            return false;
+        }
+
+        //Not null check
+        if(description != null){
+            //Fields are equal check
+            if(!description.equals(task.description)){
+                return false;
+            }
+        //If not null check is false then check if the description field of the task object is not null
+        } else if(task.description!= null){
+            return false;
+        }
+
+        //Not null check
+        if(deadline != null){
+            //Fields are equal check
+            if(!deadline.equals(task.deadline)){
+                return false;
+            }
+        //If not null check is false then check if the deadline field of the task object is not null
+        } else if(task.deadline!= null){
+            return false;
+        }
+        //If all the fields are equal then return true
+        return true;
+    }
+
+
+
+
+
+
 
 
 
