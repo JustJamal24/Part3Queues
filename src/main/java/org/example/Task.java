@@ -3,7 +3,7 @@ package org.example;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Task {
+public class Task  implements Comparable<Task> {
 
     // Fields
     private String owner;
@@ -122,6 +122,22 @@ public class Task {
                 ", description='" + description + '\'' +
                 ", deadline=" + deadline + " " +
                 '}';
+    }
+
+    // A compareTo() method.
+    @Override
+    public int compareTo(Task otherTaskDeadline) {
+        // Comparing deadlines
+        if(this.deadline == null && otherTaskDeadline.deadline == null){
+            return 0; // If both deadlines are null they're equal so return 0
+        } else if(this.deadline == null){
+            return 1; // This task has no deadline, so it comes after the other task so return 1
+        } else if(otherTaskDeadline.deadline == null){
+            return -1; // The other task has no deadline, so it comes after this task so return -1
+        } else {
+            // Comparing deadlines based on their dates
+            return this.deadline.compareTo(otherTaskDeadline.deadline);
+        }
     }
 
 
