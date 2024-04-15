@@ -114,6 +114,19 @@ public class Task {
         return Objects.hash(owner, description, deadline);
     }
 
+    // A toString() method.
+    @Override
+    public String toString() {
+        return "Task { " +
+                "owner='" + owner + '\'' +
+                ", description='" + description + '\'' +
+                ", deadline=" + deadline + " " +
+                '}';
+    }
+
+
+
+
 
 
 
