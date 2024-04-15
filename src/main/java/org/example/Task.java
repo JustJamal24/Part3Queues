@@ -23,6 +23,44 @@ public class Task {
         }
     }
 
+    // Getter
+    public String getOwner() {
+        return owner;
+    }
+
+    // Setter
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    // Getter
+    public String getDescription() {
+        return description;
+    }
+
+    // Setter
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    // Getter
+    public LocalDate getDeadline() {
+        return deadline;
+    }
+
+    //Setter
+    public void setDeadline(LocalDate deadline) {
+        this.deadline = deadline;
+        LocalDate today = LocalDate.now();
+        // Check if deadline is before or today's date'
+        // If deadline is before or today's date, then throw an IllegalArgumentException'
+        if (deadline.compareTo(today) <= 0 || deadline.compareTo(today) == 0) {
+            throw new IllegalArgumentException("Deadline cannot be before or equal to today's date");
+        }
+    }
+
+
+
 
 
 
