@@ -25,6 +25,17 @@ public class LinkedList {
         this.numberOfTasks = 0;
         this.maxSize = maxSize;
     }
+    public int size() {
+        return numberOfTasks;
+    }
+
+    public boolean isEmpty() {
+        return numberOfTasks == 0;
+    }
+
+    public boolean isFull() {
+        return numberOfTasks == maxSize;
+    }
 
 
 
