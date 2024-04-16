@@ -37,6 +37,24 @@ public class LinkedList {
         return numberOfTasks == maxSize;
     }
 
+    private int calcPosition(Task taskToBeAdded) {
+        // Go through the linked list to find the appropriate position based on the task's deadline
+        Node current = head;
+        int position = 0;
+
+        while (current != null && taskToBeAdded.compareTo(current.getData()) > 0) {
+            current = current.getNext();
+            position++;
+        }
+
+        // If the task is already present in the queue, throw DuplicateElementException
+        if (current != null && taskToBeAdded.equals(current.getData())) {
+            throw new DuplicateElementException("Task already exists in the queue");
+        }
+
+        return position;
+    }
+
 
 
 
