@@ -55,6 +55,38 @@ public class LinkedList {
         return position;
     }
 
+    public void add(Task taskToBeAdded) {
+        // Null check
+        if (taskToBeAdded == null) {
+            throw new IllegalArgumentException("Task cannot be null");
+        }
+        // isFull() check
+        if (isFull()) {
+            throw new IllegalStateException("The queue is full");
+        }
+
+        int position = calcPosition(taskToBeAdded);
+        Node newNode = new Node(taskToBeAdded);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            Node current = head;
+            // Go through the linked list to find the appropriate position based on the task's deadline
+            for (int i = 0; i < position; i++) {
+                current = current.getNext();
+            }
+            // Insert the new node at the appropriate position
+            newNode.setNext(current.getNext());
+            // Set the previous node's next pointer to the new node'
+            current.setNext(newNode);
+        }
+        numberOfTasks++;
+    }
+
+
+
+
 
 
 
