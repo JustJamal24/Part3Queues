@@ -84,6 +84,32 @@ public class LinkedList {
         numberOfTasks++;
     }
 
+    public boolean offer(Task taskToBeAdded) {
+        if (taskToBeAdded == null) {
+            throw new IllegalArgumentException("Task cannot be null");
+        }
+        if (isFull()) {
+            throw new IllegalStateException("The queue is full");
+        }
+
+        int position = calcPosition(taskToBeAdded);
+        Node newNode = new Node(taskToBeAdded);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            Node current = head;
+            for (int i = 0; i < position; i++) {
+                current = current.getNext();
+            }
+            newNode.setNext(current.getNext());
+            current.setNext(newNode);
+        }
+        numberOfTasks++;
+        return true;
+    }
+
+
 
 
 
