@@ -109,30 +109,40 @@ public class LinkedList {
         return true;
     }
 
+    public Task element() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("The queue is empty");
+        }
+        return head.getData();
+    }
+
+    public Task poll() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("The queue is empty");
+        }
+        Task firstTask = head.getData();
+        head = head.getNext();
+        numberOfTasks--;
+        return firstTask;
+    }
+
+    public Task peek() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("The queue is empty");
+        }
+        return head.getData();
+    }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public Task remove() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("The queue is empty");
+        }
+        Task firstTask = head.getData();
+        head = head.getNext();
+        numberOfTasks--;
+        return firstTask;
+    }
 
     protected static class Node {
         // Fields
