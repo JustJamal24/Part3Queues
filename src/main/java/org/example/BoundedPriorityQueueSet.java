@@ -1,5 +1,11 @@
 package org.example;
 
-public class BoundedPriorityQueueSet {
+public class BoundedPriorityQueueSet  extends LinkedList {
+
+
+
+
+
+
 
 }
