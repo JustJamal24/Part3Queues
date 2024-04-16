@@ -18,6 +18,17 @@ public class LinkedList {
         this.numberOfTasks = 0;
         this.maxSize = 10;
     }
+    // constructor that accepts a maximum size
+    public LinkedList(int maxSize) {
+        this.head = null;
+        this.tail = null;
+        this.numberOfTasks = 0;
+        this.maxSize = maxSize;
+    }
+
+
+
+
 
 
 
@@ -47,7 +58,7 @@ public class LinkedList {
         }
 
         //Setters and Getters
-        
+
         public void setNext(Node next) {
             this.next = next;
         }
