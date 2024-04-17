@@ -59,6 +59,14 @@ public class MenuApp {
                         System.out.println("Failed to add task: " + e.getMessage());
                     }
                     break;
+                case 2:
+                    try{
+                        Task nextTask = taskQueue.peek();
+                        System.out.println("Next Task: " + nextTask);
+                    } catch (NoSuchElementException e){
+                        System.out.println("No tasks available");
+                    }
+                    break;
 
 
 
