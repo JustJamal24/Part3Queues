@@ -124,6 +124,13 @@ public class Task  implements Comparable<Task> {
                 '}';
     }
 
+    /**
+     * Compares this task with another task based on their deadlines.
+     * @param otherTaskDeadline the task (object) to be compared.
+     * @return a neagtive integer, zero or a positive integer
+     */
+
+
     // A compareTo() method.
     @Override
     public int compareTo(Task otherTaskDeadline) {
