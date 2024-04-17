@@ -1,3 +1,5 @@
+import org.example.BoundedPriorityQueueSet;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -14,6 +16,7 @@ public class MenuApp {
 
 
 
+        BoundedPriorityQueueSet taskQueue = new BoundedPriorityQueueSet(maxSize);
 
 
 
