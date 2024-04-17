@@ -92,6 +92,11 @@ public class MenuApp {
 
     }
 
+
+    /**
+     * Displays the menu options for the user
+     */
+
         public static void displayMenu(){
             System.out.println("1. Add a new Task.");
             System.out.println("2. View the next Task.");
@@ -101,11 +106,14 @@ public class MenuApp {
             System.out.println("6. Exit the program.");
         }
 
+    /**
+     * Asks the user to guess whether the approach was risky or safe
+     * @param risky boolean indicating whether the approach is risky or safe
+     * @param sc the Scanner object for user input
+     */
 
 
-
-
-        public static void guessApproach(boolean risky, Scanner sc){
+    public static void guessApproach(boolean risky, Scanner sc){
             System.out.println("Do you think the approach was (1) Risky or (2) Safe");
             int guess = sc.nextInt();
 
