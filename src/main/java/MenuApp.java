@@ -2,7 +2,7 @@ import org.example.BoundedPriorityQueueSet;
 import org.example.DuplicateElementException;
 import org.example.Task;
 
-import java.sql.SQLOutput;
+
 import java.time.LocalDate;
 import java.util.NoSuchElementException;
 import java.util.Random;
@@ -26,6 +26,7 @@ public class MenuApp {
 
         int choice;
         do{
+            //calls the displayMenu method which displays the menu options
            displayMenu();
             System.out.print("Enter your choice: ");
             choice = sc.nextInt();
@@ -40,7 +41,7 @@ public class MenuApp {
                     String description = sc.nextLine();
                     System.out.println("Enter deadline (DD-MM-YYYY): ");
                     String deadline = sc.nextLine();
-                    //parse LocalDate for user input
+                    //parse LocalDate for user input and creating a Task object
                     Task task = new Task(owner, description, LocalDate.parse(deadline));
 
                     try{
@@ -77,6 +78,7 @@ public class MenuApp {
                     System.out.println("Space remaining in the queue: " + (maxSize - taskQueue.size()));
                     break;
                 case 6:
+                    //calls the method guessApproach to ask for user input
                     guessApproach(risky, sc);
                     break;
                 default:
@@ -84,6 +86,7 @@ public class MenuApp {
             }
 
         }
+        //loops until the user exits the program
             while (choice != 6);
             sc.close();
 
