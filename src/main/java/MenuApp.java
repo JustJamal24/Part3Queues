@@ -1,5 +1,6 @@
 import org.example.BoundedPriorityQueueSet;
 
+import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -29,6 +30,18 @@ public class MenuApp {
             System.out.println("6. Exit the program.");
             System.out.print("Enter your choice: ");
             choice = sc.nextInt();
+
+
+            switch (choice){
+                case 1:
+                sc.nextLine();
+                    System.out.println("Enter owner: ");
+                    String owner = sc.nextLine();
+                    System.out.println("Enter description: ");
+                    String description = sc.nextLine();
+                    System.out.println("Enter deadline (DD-MM-YYYY): ");
+                    String deadline = sc.nextLine();
+            }
 
 
 
