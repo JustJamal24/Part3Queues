@@ -16,6 +16,7 @@ public class BoundedPriorityQueueSet  extends LinkedList {
         return super.isEmpty();
     }
 
+
     public boolean isFull(){
         return super.isFull();
     }
