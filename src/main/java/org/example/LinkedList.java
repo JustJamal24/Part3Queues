@@ -25,18 +25,41 @@ public class LinkedList {
         this.numberOfTasks = 0;
         this.maxSize = maxSize;
     }
+
+
+    /**
+     * Gets the number of tasks currently stored in the linked list
+     * @return number of tasks
+     */
     public int size() {
         return numberOfTasks;
     }
 
+
+    /**
+     * Checks if the linked list is empty
+     * @return true if its empty, false otherwise
+     */
     public boolean isEmpty() {
         return numberOfTasks == 0;
     }
 
+
+    /**
+     * Checks if the linked list is full
+     * @return true if it is full, false otherwise
+     */
     public boolean isFull() {
         return numberOfTasks == maxSize;
     }
 
+
+    /**
+     * Calculates position to insert a task into the linked list based on the deadline.
+     * @param taskToBeAdded task to be added to the linked list
+     * @return position where task should be inserted
+     * @throws DuplicateElementException if task is already present
+     */
     private int calcPosition(Task taskToBeAdded) {
         // Go through the linked list to find the appropriate position based on the task's deadline
         Node current = head;
@@ -55,6 +78,13 @@ public class LinkedList {
         return position;
     }
 
+
+    /**
+     * Adds a task to the linked list in the appropriate position
+     * @param taskToBeAdded the task to be added
+     * @throws IllegalArgumentException if task is null
+     * @throws IllegalStateException if the linked list is full
+     */
     public void add(Task taskToBeAdded) {
         // Null check
         if (taskToBeAdded == null) {
@@ -84,6 +114,14 @@ public class LinkedList {
         numberOfTasks++;
     }
 
+
+    /**
+     * Offers a task to the linked list in a certain manner
+     * @param taskToBeAdded task to be added
+     * @return true if the task wad added, false otherwise
+     * @throws IllegalArgumentException if task is null
+     * @throws IllegalStateException if the linked list is full
+     */
     public boolean offer(Task taskToBeAdded) {
         if (taskToBeAdded == null) {
             throw new IllegalArgumentException("Task cannot be null");
@@ -109,6 +147,12 @@ public class LinkedList {
         return true;
     }
 
+
+    /**
+     * Retrieves the first task in the linked list without removing it
+     * @return the first task in the linked list
+     * @throws NoSuchElementException if the linked list is empty
+     */
     public Task element() {
         if (isEmpty()) {
             throw new NoSuchElementException("The queue is empty");
@@ -116,6 +160,11 @@ public class LinkedList {
         return head.getData();
     }
 
+    /**
+     * Retrieves and removes the first task in the linked list
+     * @return the first task in the linked list
+     * @throws NoSuchElementException if linked list is empty
+     */
     public Task poll() {
         if (isEmpty()) {
             throw new NoSuchElementException("The queue is empty");
@@ -126,6 +175,11 @@ public class LinkedList {
         return firstTask;
     }
 
+
+    /**
+     * Retrieves the first task in the linked list without removing it
+     * @return first task in the linked list or null if linked list is empty
+     */
     public Task peek() {
         if (isEmpty()) {
             throw new NoSuchElementException("The queue is empty");
@@ -134,6 +188,10 @@ public class LinkedList {
     }
 
 
+    /**
+     * Retrieves and removes the first task in the linked list
+     * @return first task in the linked list or null if linked list is empty
+     */
     public Task remove() {
         if (isEmpty()) {
             throw new NoSuchElementException("The queue is empty");
