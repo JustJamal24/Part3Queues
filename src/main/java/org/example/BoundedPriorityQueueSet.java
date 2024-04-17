@@ -19,6 +19,13 @@ public class BoundedPriorityQueueSet  extends LinkedList {
         return super.isFull();
     }
 
+
+    /**
+     * Adds a task to the queue
+     * @param task the task to be added
+     * @throws IllegalStateException if the queue is full
+     */
+
     public void add(Task task){
         if(isFull()){
             //if the queue is full, an exception is thrown
@@ -27,6 +34,14 @@ public class BoundedPriorityQueueSet  extends LinkedList {
         super.add(task);
     }
 
+
+
+    /**
+     * Offers a task to the queue
+     * @param task the task to be added
+     * @return true if the task was added, false otherwise
+     *
+     */
     public boolean offer(Task task){
         if(isFull()){
             //if the queue is full, return false
