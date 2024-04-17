@@ -1,6 +1,10 @@
 import org.example.BoundedPriorityQueueSet;
+import org.example.DuplicateElementException;
+import org.example.Task;
 
 import java.sql.SQLOutput;
+import java.time.LocalDate;
+import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -41,6 +45,30 @@ public class MenuApp {
                     String description = sc.nextLine();
                     System.out.println("Enter deadline (DD-MM-YYYY): ");
                     String deadline = sc.nextLine();
+                    //parse LocalDate for user input
+                    Task task = new Task(owner, description, LocalDate.parse(deadline));
+
+                    try{
+                        if(risky){
+                            taskQueue.add(task);
+                        }else{
+                            taskQueue.offer(task);
+                        }
+                        System.out.println("Task successfully added ");
+                    } catch (DuplicateElementException e){
+                        System.out.println("Failed to add task: " + e.getMessage());
+                    }
+                    break;
+
+
+
+
+
+
+
+
+
+
             }
 
 
