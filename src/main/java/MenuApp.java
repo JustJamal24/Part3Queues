@@ -26,12 +26,7 @@ public class MenuApp {
 
         int choice;
         do{
-            System.out.println("1. Add a new Task.");
-            System.out.println("2. View the next Task.");
-            System.out.println("3. Mark the next Task as done.");
-            System.out.println("4. View the number of Tasks remaining.");
-            System.out.println("5. View the space remaining in the queue.");
-            System.out.println("6. Exit the program.");
+           displayMenu();
             System.out.print("Enter your choice: ");
             choice = sc.nextInt();
 
@@ -81,27 +76,43 @@ public class MenuApp {
                 case 5:
                     System.out.println("Space remaining in the queue: " + (maxSize - taskQueue.size()));
                     break;
-
-
-
+                case 6:
+                    guessApproach(risky, sc);
+                    break;
+                default:
+                System.out.println("Invalid choice. Please try again. ");
             }
 
+        }
+            while (choice != 6);
+            sc.close();
 
+    }
 
-
-
-
-
+        public static void displayMenu(){
+            System.out.println("1. Add a new Task.");
+            System.out.println("2. View the next Task.");
+            System.out.println("3. Mark the next Task as done.");
+            System.out.println("4. View the number of Tasks remaining.");
+            System.out.println("5. View the space remaining in the queue.");
+            System.out.println("6. Exit the program.");
         }
 
 
 
 
 
+        public static void guessApproach(boolean risky, Scanner sc){
+            System.out.println("Do you think the approach was (1) Risky or (2) Safe");
+            int guess = sc.nextInt();
 
-
-
-    }
+            //checks if the users guess matches boolean value
+            if((risky && guess == 1) || (!risky && guess == 2)){
+                System.out.println("You guessed correctly, Well done!");
+            } else {
+                System.out.println("Incorrect guess");
+            }
+        }
 
 
 
