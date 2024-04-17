@@ -67,13 +67,20 @@ public class MenuApp {
                         System.out.println("No tasks available");
                     }
                     break;
-
-
-
-
-
-
-
+                case 3:
+                    try{
+                        Task finishedTask = taskQueue.poll();
+                        System.out.println("Task marked as done: " + finishedTask);
+                    } catch (NoSuchElementException e){
+                        System.out.println("No tasks available");
+                    }
+                    break;
+                case 4:
+                    System.out.println("Number of Tasks remaining: " + taskQueue.size());
+                    break;
+                case 5:
+                    System.out.println("Space remaining in the queue: " + (maxSize - taskQueue.size()));
+                    break;
 
 
 
