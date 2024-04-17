@@ -45,6 +45,14 @@ public class BoundedPriorityQueueSet  extends LinkedList {
         return super.poll();
     }
 
+    public Task peek(){
+        return super.peek();
+    }
+
+    public Task remove(){
+     return super.remove();
+    }
+
 
 
 
