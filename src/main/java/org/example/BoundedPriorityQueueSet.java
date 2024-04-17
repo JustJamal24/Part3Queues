@@ -27,6 +27,28 @@ public class BoundedPriorityQueueSet  extends LinkedList {
         super.add(task);
     }
 
+    public boolean offer(Task task){
+        if(isFull()){
+            //if the queue is full, return false
+            return false;
+        }
+        //calls add method from LinkedList and adds the task
+        super.add(task);
+        return true;
+    }
+
+    public Task element(){
+        return super.element();
+    }
+
+    public Task poll(){
+        return super.poll();
+    }
+
+
+
+
+
 
 
 
