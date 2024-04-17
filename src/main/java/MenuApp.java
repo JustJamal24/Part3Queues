@@ -19,6 +19,24 @@ public class MenuApp {
         BoundedPriorityQueueSet taskQueue = new BoundedPriorityQueueSet(maxSize);
 
 
+        int choice;
+        do{
+            System.out.println("1. Add a new Task.");
+            System.out.println("2. View the next Task.");
+            System.out.println("3. Mark the next Task as done.");
+            System.out.println("4. View the number of Tasks remaining.");
+            System.out.println("5. View the space remaining in the queue.");
+            System.out.println("6. Exit the program.");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+
+
+
+
+
+
+        }
+
 
 
 
